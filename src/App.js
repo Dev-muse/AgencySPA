@@ -15,7 +15,7 @@ const IntroShape = styled.div`
   top: 0;
   left: 0;
   clip-path: polygon(67% 0, 100% 0, 100% 100%, 55% 100%);
-  z-index: -10;
+  z-index: -1;
   background-color: #fd0983;
 `;
 function App() {

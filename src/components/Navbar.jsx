@@ -35,6 +35,10 @@ const MenuItem = styled.li`
   font-size: 20px;
   color: gray;
   font-weight: bold;
+
+  &:hover {
+    color: #fd0983;
+  }
 `;
 
 const Button = styled.button`
@@ -47,6 +51,10 @@ const Button = styled.button`
   letter-spacing: 2px;
   border-radius: 10px;
   cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    color: #fd0983;
+  }
 `;
 
 const Navbar = () => {

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import heroImg from "../img/woman.png";
+import AnimatedShapes from "./AnimatedShapes";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -42,15 +43,21 @@ const Button = styled.button`
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
 `;
 const Contact = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Phone = styled.span`
+const Phone = styled.a`
   color: #fd0983;
   font-weight: bold;
+  text-decoration: none;
 `;
 
 const ContactText = styled.span`
@@ -78,7 +85,7 @@ function Intro() {
         <Info>
           <Button>Start A Project</Button>
           <Contact>
-            <Phone>
+            <Phone href='tel:07508218412'>
               <span style={{ color: "#000" }}>Call Us:</span> +447508218412
             </Phone>
             <ContactText>For any queries or concerns</ContactText>
@@ -88,6 +95,7 @@ function Intro() {
       <Right>
         <Image src={heroImg} alt='Hero image' />
       </Right>
+      <AnimatedShapes />
     </Container>
   );
 }
