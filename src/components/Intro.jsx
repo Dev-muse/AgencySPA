@@ -7,6 +7,7 @@ const Container = styled.div`
   height: calc(100vh - 50px);
   display: flex;
   padding: 20px;
+  overflow: hidden;
 `;
 const Left = styled.div`
   display: flex;
@@ -70,7 +71,9 @@ const Right = styled.div`
 
 const Image = styled.img`
   position: relative;
-  left: 126px;
+  left: 155px;
+  width: 80%;
+  z-index: 2;
 `;
 
 function Intro() {
