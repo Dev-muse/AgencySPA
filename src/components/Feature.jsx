@@ -37,10 +37,10 @@ const Button = styled.button`
   width: 150px;
   border: none;
   padding: 15px 20px;
-  background-color: #fd0983;
+  background-color: #0056ab;
   color: #fff;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 20px;
   cursor: pointer;
 
@@ -76,6 +76,8 @@ const Feature = () => {
 
         <Button>Learn More</Button>
       </Right>
+
+      <AnimatedShapes />
     </Container>
   );
 };
