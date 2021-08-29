@@ -96,12 +96,11 @@ const Service = () => {
           </Desc>
           <CardContainer>
             <MiniCard text={"Web design and development"} />
-            <MiniCard text={"Lead generation services"} />
+            <MiniCard text={"Demand generation services"} />
             <MiniCard text={"Reputation management"} />
           </CardContainer>
 
           <Button onClick={() => setOpen(true)}>
-            {" "}
             <Icon src={playIcon} />
             How it works
           </Button>
