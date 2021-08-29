@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import tick from "../img/tick.png";
+import tick from "../assets/tick.png";
 
 const Container = styled.div`
   -webkit-box-shadow: 0 0 17px -11px rgba(0, 0, 0, 0.58);
@@ -19,6 +19,7 @@ const Container = styled.div`
 const PriceContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 const Price = styled.span`
   font-weight: bold;
@@ -78,10 +79,10 @@ const PriceCard = ({ price, type, list, desc }) => {
     <Container>
       <PriceContainer>
         <Price>
-          <span style={{ color: "#2ECC71" }}>$</span>
+          <span style={{ color: "#fd0983" }}>$</span>
           {price}
         </Price>
-        /monthh
+        /month
       </PriceContainer>
       <Type>{type}</Type>
       <Desc>{desc}</Desc>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import MiniCard from "./MiniCard";
-import user from "../img/user.png";
-import playIcon from "../img/play.png";
-import serviceVideo from "../img/service.mp4";
+import user from "../assets/user.png";
+import playIcon from "../assets/play.png";
+import serviceVideo from "../assets/service.mp4";
 
 const Container = styled.div`
   display: flex;

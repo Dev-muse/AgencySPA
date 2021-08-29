@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import App from "../img/app.png";
+import App from "../assets/app.png";
 import AnimatedShapes from "./AnimatedShapes";
 
 const Container = styled.div`
   display: flex;
+  height: 100%;
 `;
 const Left = styled.div`
   flex: 1;

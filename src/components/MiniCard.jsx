@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SearchIcon from "../img/search.png";
+import SearchIcon from "../assets/search.png";
 
 const Container = styled.div`
   padding: 20px;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Myimg from "../img/logo.svg";
+import Myimg from "../assets/logo.svg";
 
 const Container = styled.div`
   height: 50px;
@@ -20,7 +20,7 @@ const Left = styled.div`
   justify-content: space-between;
 `;
 const Logo = styled.img`
-  width: 150px;
+  width: 200px;
 `;
 Logo.defaultProps = {
   src: Myimg,
