@@ -6,15 +6,25 @@ import AnimatedShapes from "./AnimatedShapes";
 const Container = styled.div`
   display: flex;
   height: 100%;
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
 `;
 const Left = styled.div`
   flex: 1;
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 const Right = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 const Image = styled.img`
@@ -22,6 +32,9 @@ const Image = styled.img`
 `;
 const Title = styled.span`
   font-size: 70px;
+  @media only screen and (max-width: 480px) {
+    font-size: 40px;
+  }
 `;
 const SubTitle = styled.span`
   font-size: 24px;
@@ -33,12 +46,18 @@ const Desc = styled.span`
   font-size: 24px;
   color: #777;
   margin-top: 20px;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
-const Button = styled.button`
+const Button = styled.a`
   width: 150px;
+  text-align: center;
   border: none;
   padding: 15px 20px;
   background-color: #0056ab;
+  text-decoration: none;
   color: #fff;
   border-radius: 10px;
   margin-top: 30px;
@@ -53,7 +72,7 @@ const Button = styled.button`
 
 const Feature = () => {
   return (
-    <Container>
+    <Container id='features'>
       <Left>
         <Image src={App} />
       </Left>
@@ -71,11 +90,11 @@ const Feature = () => {
         </Desc>
 
         <Desc>
-          We are invested in the success of your brand throughout its journey , so you're in safe
-          hands.
+          We are invested in the success of your brand throughout its journey , from it's inception
+          to it's prominence as giant brand, so you're in safe hands.
         </Desc>
 
-        <Button>Learn More</Button>
+        <Button href='#contact'>Learn More</Button>
       </Right>
 
       <AnimatedShapes />

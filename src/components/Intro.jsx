@@ -8,6 +8,9 @@ const Container = styled.div`
   display: flex;
   padding: 20px;
   overflow: hidden;
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 const Left = styled.div`
   display: flex;
@@ -15,17 +18,29 @@ const Left = styled.div`
   align-items: center;
   flex-direction: column;
   flex: 4;
+  @media only screen and (max-width: 480px) {
+    flex: 1;
+    height: 100%;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 60px;
   width: 60%;
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    font-size: 50px;
+  }
 `;
 
 const Desc = styled.p`
   width: 60%;
   font-size: 20px;
   margin-top: 15px;
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    font-size: 16px;
+  }
 `;
 
 const Info = styled.div`
@@ -33,11 +48,18 @@ const Info = styled.div`
   width: 60%;
   justify-content: space-between;
   margin-top: 50px;
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
-const Button = styled.button`
+const Button = styled.a`
   padding: 15px;
-  background-color: #fd0983;
+  background-color: darkblue;
+  text-align: center;
   color: #fff;
+  text-decoration: none;
   border-radius: 10px;
   border: none;
   font-weight: bold;
@@ -59,14 +81,24 @@ const Phone = styled.a`
   color: #fd0983;
   font-weight: bold;
   text-decoration: none;
+  @media only screen and (max-width: 480px) {
+    color: #000;
+    margin-top: 10px;
+  }
 `;
 
 const ContactText = styled.span`
   color: grey;
   margin-top: 5px;
+  @media only screen and (max-width: 480px) {
+    color: #111;
+  }
 `;
 const Right = styled.div`
   flex: 3;
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const Image = styled.img`
@@ -86,7 +118,7 @@ function Intro() {
           clients as the only way to deliver impactful results for them.
         </Desc>
         <Info>
-          <Button>Start A Project</Button>
+          <Button href='#contact'>Start A Project</Button>
           <Contact>
             <Phone href='tel:07508218412'>
               <span style={{ color: "#000" }}>Call Us:</span> +447508218412

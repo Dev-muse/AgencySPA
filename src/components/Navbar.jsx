@@ -20,7 +20,7 @@ const Left = styled.div`
   justify-content: space-between;
 `;
 const Logo = styled.img`
-  width: 200px;
+  width: 150px;
 `;
 Logo.defaultProps = {
   src: Myimg,
@@ -28,23 +28,27 @@ Logo.defaultProps = {
 
 const Menu = styled.ul`
   display: flex;
-  list-style: none;
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 `;
-const MenuItem = styled.li`
+const MenuItem = styled.a`
   margin-right: 30px;
   font-size: 20px;
   color: gray;
   font-weight: bold;
+  text-decoration: none;
 
   &:hover {
     color: #fd0983;
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   border: 2px solid #fff;
   padding: 10px 20px;
   background-color: #fd0983;
+  text-decoration: none;
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -55,23 +59,29 @@ const Button = styled.button`
     background-color: #fff;
     color: #fd0983;
   }
+  @media only screen and (max-width: 480px) {
+    text-align: center;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 8px;
+  }
 `;
 
 const Navbar = () => {
   return (
-    <Container>
+    <Container id='home'>
       <Wrapper>
         <Left>
-          <Logo alt='logo ' />
+          <Logo alt='RapidMuse logo ' />
           <Menu>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Features</MenuItem>
-            <MenuItem>Services</MenuItem>
-            <MenuItem>Pricing</MenuItem>
-            <MenuItem>Contact</MenuItem>
+            <MenuItem href='#home'>Home</MenuItem>
+            <MenuItem href='#features'>Features</MenuItem>
+            <MenuItem href='#services'>Services</MenuItem>
+            <MenuItem href='#pricing'>Pricing</MenuItem>
+            <MenuItem href='#contact'>Contact</MenuItem>
           </Menu>
         </Left>
-        <Button>Join Today</Button>
+        <Button href='#contact'>Join Today</Button>
       </Wrapper>
     </Container>
   );

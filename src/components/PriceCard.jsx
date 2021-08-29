@@ -15,6 +15,12 @@ const Container = styled.div`
   align-items: center;
   height: 500px;
   margin-left: 15px;
+
+  @media only screen and (max-width: 480px) {
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
 `;
 const PriceContainer = styled.div`
   display: flex;
@@ -24,6 +30,10 @@ const PriceContainer = styled.div`
 const Price = styled.span`
   font-weight: bold;
   font-size: 50px;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 30px;
+  }
 `;
 const Type = styled.button`
   padding: 10px;
@@ -33,6 +43,10 @@ const Type = styled.button`
   color: #fd0983;
   background: #fff;
   margin: 10px 0;
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const List = styled.ul`
@@ -51,10 +65,17 @@ const ListItem = styled.li`
   background-size: 24px;
   background-repeat: no-repeat;
   min-width: 200px;
+
+  @media only screen and (max-width: 480px) {
+    margin: 10px;
+    font-size: 12px;
+  }
 `;
-const Button = styled.button`
+const Button = styled.a`
   padding: 15px;
   border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
   font-size: 16px;
   background-color: #fd0983;
   border: none;
@@ -65,6 +86,11 @@ const Button = styled.button`
   &:hover {
     color: #fff;
     background: #000;
+  }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 12px;
+    padding: 5px;
   }
 `;
 
@@ -91,7 +117,7 @@ const PriceCard = ({ price, type, list, desc }) => {
           return <ListItem>{item}</ListItem>;
         })}
       </List>
-      <Button>Get Started</Button>
+      <Button href='#contact'>Get Started</Button>
     </Container>
   );
 };

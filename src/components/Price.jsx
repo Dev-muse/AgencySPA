@@ -7,6 +7,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 const Price = () => {
   const data = {
@@ -41,7 +45,7 @@ const Price = () => {
     },
   };
   return (
-    <Container>
+    <Container id='pricing'>
       <PriceCard
         price={data.starter.price}
         type={data.starter.type}

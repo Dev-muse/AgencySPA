@@ -13,6 +13,9 @@ const Container = styled.div`
 const Left = styled.div`
   flex: 1;
   position: relative;
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const Image = styled.img`
@@ -32,15 +35,25 @@ const Video = styled.video`
   margin: auto;
   border: none;
   height: 300px;
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    right: 0;
+  }
 `;
 const Right = styled.div`
   flex: 1;
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 50px;
+  @media only screen and (max-width: 480px) {
+    padding: 20px;
+  }
 `;
 
 const Title = styled.h1``;
@@ -48,6 +61,10 @@ const Desc = styled.p`
   font-size: 24px;
   margin-top: 20px;
   color: #555;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 const CardContainer = styled.div`
@@ -78,10 +95,36 @@ const Button = styled.button`
   }
 `;
 
+const Modal = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  right: 5px;
+  top: 25%;
+`;
+
 const Service = () => {
+  const data = {
+    service1: "Web design & development",
+    service2: "Lead generation service",
+    service3: "Reputation management",
+  };
   const [open, setOpen] = useState(false);
+  const smallScreen = window.screen.width <= 480 ? true : false;
+
   return (
-    <Container>
+    <Container id='services'>
       <Left>
         <Image open={open} src={user} />
         <Video open={open} autoplay loop controls src={serviceVideo} />
@@ -95,9 +138,9 @@ const Service = () => {
             needs. We work with you to turn your business goals into reality.
           </Desc>
           <CardContainer>
-            <MiniCard text={"Web design and development"} />
-            <MiniCard text={"Demand generation services"} />
-            <MiniCard text={"Reputation management"} />
+            <MiniCard text={data.service1} />
+            <MiniCard text={data.service2} />
+            <MiniCard text={data.service3} />
           </CardContainer>
 
           <Button onClick={() => setOpen(true)}>
@@ -106,6 +149,12 @@ const Service = () => {
           </Button>
         </Wrapper>
       </Right>
+      {smallScreen && open ? (
+        <Modal>
+          <Video open={open} autoplay loop controls src={serviceVideo} />
+          <CloseButton onClick={() => setOpen(false)}>Close</CloseButton>
+        </Modal>
+      ) : null}
     </Container>
   );
 };
